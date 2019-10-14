@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 // import { validate } from '../utils/validation';
 import {LOGIN} from '../utils/screenName';
 import {signUpAction} from '../actions/loginAction';
-import { validationService } from "../../validation/service";
+import { validationService } from "../validation/service";
 
 class SignupContainer extends Component {
     constructor (props) {
