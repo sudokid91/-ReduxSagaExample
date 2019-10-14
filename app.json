@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": " ReduxSagaExample",
+    "slug": "ReduxSagaExcample",
+    "privacy": "public",
+    "sdkVersion": "35.0.0",
+    "facebookScheme" :"fb531791924221628", 
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "host.exp.Exponent",
+      "supportsTablet": true,
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "956379246702-im57k1k39b54g2t65tu252hnklfpsq55.apps.googleusercontent.com"
+        }
+      }
+    },
+    "description": "hoangnn",
+    "githubUrl": "https://github.com/sudokid91/-ReduxSagaExample"
+  }
+}
