@@ -20,7 +20,7 @@ export default class LoginComponent extends Component {
                 <KeyboardAvoidingView behavior='padding' style={styles.container}>
                     <TouchableWithoutFeedback style={styles.container} 
                             onPress={Keyboard.dismiss}>
-                        <View style={styles.logoContainer}>
+                        <View style={styles.container}>
                             <View style={styles.logoContainer}>
                                 <Image style={styles.logo}
                                     source={require('../images/logo.png')}>
@@ -52,20 +52,6 @@ export default class LoginComponent extends Component {
                                 <Text style={styles.loginError}>{msgError.length > 0 ? msgError : ""}</Text>
                                 <TouchableOpacity style={styles.buttonContainer} 
                                     onPress = {() => {
-                                        this.props.logInGoogle();
-                                    }} 
-                                >
-                                    <Text style={styles.buttonSignin}>Login With Google</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.buttonContainer} 
-                                    onPress = {() => {
-                                        this.props.logInFB();
-                                    }} 
-                                >
-                                    <Text style={styles.buttonSignin}>Login With Facebook</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.buttonContainer} 
-                                    onPress = {() => {
                                         const { umUserName, umUserPassword } = this.state;
                                         if (!umUserName.length || !umUserPassword.length) {
                                             alert('You must enter info');
@@ -95,12 +81,12 @@ export default class LoginComponent extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'rgb(32, 53, 70)',
+        backgroundColor: 'rgb(32, 53, 70)', 
         flexDirection: 'column',
     },
     logoContainer: {
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         flex: 1
     },
     logo: {
@@ -115,13 +101,11 @@ const styles = StyleSheet.create({
         opacity: 0.9
     },
     infoContainer: {
-        position: 'absolute',
         left: 0,
         right: 0,
         bottom: 0,
-        height: 280,
         padding: 20,
-        // backgroundColor: 'red'
+        flex: 2
     },
     input: {
         height: 40,

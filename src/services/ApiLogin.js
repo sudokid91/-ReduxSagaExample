@@ -56,6 +56,7 @@ function* registerFormApi (user) {
   }
 
 function* loginFormApi (user) {
+  console.log(`usser login : ${JSON.stringify(user)}`);
     const response = yield axios({
         method: 'post',
         url: urlLogin,
@@ -64,7 +65,7 @@ function* loginFormApi (user) {
           umUserPassword : user.umUserPassword
         }
       });
-
+    console.log(`response sigin: ${JSON.stringify(response)}`);  
     return yield response.status === 200 ? JSON.stringify(response): [];
 } 
 
@@ -79,7 +80,7 @@ function* fetchUserInfoFormApi (userName, token) {
   let url = urlGetUserInfo + `?userName=${userName}`;
   const response = yield axios.get(url,config).then (res => {
     return res;
-  }).catch(err => console.log(`error: Loi fetch user info : ${JSON.stringify(err.response)}`));
+  }).catch(err => console.log(`error: Loi fetch user info`));
   // const response = fetch (url,config).then (res => console.log(`res fetch user : ${JSON.stringify(res)}`)).catch(err => console.log(`erros fetch user : ${JSON.stringify(err)}`));
   return yield ((typeof(response) !== 'undefined' && response.status === 200) ? response.data: 0);
 }
