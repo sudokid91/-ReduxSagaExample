@@ -3,9 +3,8 @@ import {
   View, Text, StyleSheet, SafeAreaView, StatusBar, KeyboardAvoidingView, Dimensions,
   TouchableWithoutFeedback, TextInput, Keyboard, TouchableOpacity, ScrollView, ImageBackground
 } from 'react-native';
-
 import { Button, Input, Image, ButtonGroup } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { NavigationActions, StackActions } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -124,7 +123,6 @@ class SignupContainer extends Component {
                 <Image style={styles.logo}
                   source={require('../images/logo.png')}>
                 </Image>
-                <Text style={styles.title}>Add New Account</Text>
               </View>
               <View style={styles.scrollView}>
                 <ScrollView style={styles.scrollInfo}>
@@ -291,7 +289,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(SignupContainer);
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     // padding: 8,
     // paddingTop: 50,
     flexDirection: 'column'
@@ -308,7 +306,7 @@ const styles = StyleSheet.create({
     fontSize: 15
   },
   scrollView: {
-    flex: 3,
+    flex: 4,
     paddingBottom: 20
   },
   scrollInfo: {
@@ -317,18 +315,12 @@ const styles = StyleSheet.create({
   logoContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: 30
   },
   logo: {
-    width: 128,
-    height: 56,
-  },
-  title: {
-    color: '#f7c744',
-    fontSize: 18,
-    textAlign: 'center',
-    marginTop: 5,
-    opacity: 0.9
+    width: width-15,
+    height: 120,
   },
   input: {
     borderRadius: 5,
