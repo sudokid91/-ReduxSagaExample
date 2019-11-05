@@ -250,8 +250,7 @@ class SignupContainer extends Component {
               <View style={styles.button}>
                 <Button
                   title='Save'
-                  // style={{ flex: 1, marginRight: 5, backgroundColor : 'rgb(66,103,178)' }}    
-                  style={styles.buttonSave}
+                  style={{ flex: 1, marginRight: 5, backgroundColor : 'rgb(66,103,178)' }}    
                   onPress={() => {
                     const { umUserName, umUserPassword, firstName, lastName, email, address, year, month, date } = this.state;
                     this.submit();
