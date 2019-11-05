@@ -120,7 +120,8 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     logo : {
-        width:width - 75,
+        // width:width - 75,
+        width:width,
         height:120
     },
     logoText : {

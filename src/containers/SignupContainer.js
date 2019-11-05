@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   View, Text, StyleSheet, SafeAreaView, StatusBar, KeyboardAvoidingView,
-  TouchableWithoutFeedback, TextInput, Keyboard, TouchableOpacity, ScrollView
+  TouchableWithoutFeedback, TextInput, Keyboard, TouchableOpacity, ScrollView, ImageBackground
 } from 'react-native';
 
 import { Button, Input, Image, ButtonGroup } from 'react-native-elements';
@@ -14,6 +14,7 @@ import { LOGIN } from '../utils/screenName';
 import { signUpAction } from '../actions/loginAction';
 import { validationService } from "../validation/service";
 
+import theme from '../images/theme-final.jpg';
 class SignupContainer extends Component {
   constructor(props) {
     super(props);
@@ -115,6 +116,7 @@ class SignupContainer extends Component {
         <StatusBar barStyle="light-content" />
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
           <TouchableWithoutFeedback style={styles.container} >
+          <ImageBackground style={styles.bgImage} source={theme}>
             <View style={styles.container}>
               <View style={styles.logoContainer}>
                 <Image style={styles.logo}
@@ -248,7 +250,8 @@ class SignupContainer extends Component {
               <View style={styles.button}>
                 <Button
                   title='Save'
-                  style={{ flex: 1, marginRight: 5 }}
+                  // style={{ flex: 1, marginRight: 5, backgroundColor : 'rgb(66,103,178)' }}    
+                  style={styles.buttonSave}
                   onPress={() => {
                     const { umUserName, umUserPassword, firstName, lastName, email, address, year, month, date } = this.state;
                     this.submit();
@@ -264,6 +267,7 @@ class SignupContainer extends Component {
                 />
               </View>
             </View>
+            </ImageBackground>
           </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
       </SafeAreaView>
@@ -287,10 +291,16 @@ export default connect(mapStateToProps, mapDispatchToProps)(SignupContainer);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 8,
+    // padding: 8,
     // paddingTop: 50,
-    flexDirection: 'column',
-    backgroundColor: 'rgb(184,116,120)',
+    flexDirection: 'column'
+  },
+  bgImage : {
+    flex:1,
+    width:null,
+    height:null,
+    justifyContent:'center',
+    alignItems: 'center'
   },
   textLabel: {
     color: 'yellow',
@@ -345,6 +355,7 @@ const styles = StyleSheet.create({
   },
   buttonSave: {
     flex: 1,
+    backgroundColor : 'rgb(66,103,178)'
   },
   buttonCancel: {
     flex: 1
