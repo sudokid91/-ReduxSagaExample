@@ -1,3 +1,4 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 import React, { Component } from 'react';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';

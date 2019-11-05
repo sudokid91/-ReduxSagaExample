@@ -10,7 +10,7 @@ import { setUserInfo, fetchUserInfo } from '../actions/loginAction';
 
 function* signup(action) {
     try {
-        const data = yield ApiLogin.registerFormApi(action.user); 
+        const data = yield ApiLogin.registerFromApi(action.user); 
         if (data.data.status == 409) {
             action.onError(data.data);
         } else {
@@ -28,7 +28,7 @@ export function* watchSignup() {
 
 function* login(action) {
     try {
-        const data = yield ApiLogin.loginFormApi(action.user);
+        const data = yield ApiLogin.loginFromApi(action.user);
         if (data) {
             const dataJson = JSON.parse(data);
             action.onSuccess(data);
@@ -49,7 +49,7 @@ export function* watchLogin() {
 function* fetchUser(action) {
     try {
         let token = action.token;
-        const data = yield ApiLogin.fetchUserInfoFormApi(action.data.umUserName, token);
+        const data = yield ApiLogin.fetchUserInfoFromApi(action.data.umUserName, token);
         if (typeof(data.umUserName) !== 'undefined' && data.umUserName.length > 0) {
             yield put(setUserInfo(data));
         }
