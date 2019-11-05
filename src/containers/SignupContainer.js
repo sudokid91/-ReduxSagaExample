@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View, Text, StyleSheet, SafeAreaView, StatusBar, KeyboardAvoidingView,
+  View, Text, StyleSheet, SafeAreaView, StatusBar, KeyboardAvoidingView, Dimensions,
   TouchableWithoutFeedback, TextInput, Keyboard, TouchableOpacity, ScrollView, ImageBackground
 } from 'react-native';
 
@@ -15,6 +15,8 @@ import { signUpAction } from '../actions/loginAction';
 import { validationService } from "../validation/service";
 
 import theme from '../images/theme-final.jpg';
+
+const {width} = Dimensions.get('window');
 class SignupContainer extends Component {
   constructor(props) {
     super(props);
